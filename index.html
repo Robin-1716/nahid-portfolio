@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nahid Hasan | Maritime Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Inter',sans-serif;
+background:#020617;
+color:#e2e8f0;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+background:rgba(2,6,23,0.9);
+z-index:1000;
+}
+
+nav a{
+color:#e2e8f0;
+margin-left:20px;
+text-decoration:none;
+}
+
+nav a:hover{color:#38bdf8;}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 10%;
+position:relative;
+overflow:hidden;
+}
+
+.hero-text{
+max-width:600px;
+z-index:2;
+}
+
+.hero h1{font-size:48px;}
+.hero p{margin-top:15px;}
+
+.hero img{
+width:260px;
+border-radius:50%;
+border:4px solid #38bdf8;
+}
+
+/* WAVE */
+.wave{
+position:absolute;
+bottom:0;
+width:200%;
+height:200px;
+background:rgba(56,189,248,0.1);
+animation:wave 10s linear infinite;
+}
+
+@keyframes wave{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* BUTTON */
+.btn{
+margin-top:20px;
+display:inline-block;
+padding:12px 25px;
+background:#38bdf8;
+color:#020617;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* SECTION */
+section{padding:80px 10%;}
+
+h2{
+border-left:4px solid #38bdf8;
+padding-left:10px;
+margin-bottom:20px;
+}
+
+/* CARDS */
+.card{
+background:#0f172a;
+padding:20px;
+margin-top:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+/* SKILLS */
+.skill{
+margin:15px 0;
+}
+
+.bar{
+background:#1e293b;
+border-radius:20px;
+}
+
+.bar div{
+height:10px;
+background:#38bdf8;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(30px);transition:1s;}
+.show{opacity:1;transform:translateY(0);}
+
+</style>
+</head>
+<body>
+
+<nav>
+<div><strong>Nahid Hasan</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#research">Research</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-text">
+<h1>Naval Architect & Maritime Engineer</h1>
+<p>
+Focused on Arctic maritime systems, sustainability, and advanced ship design.
+Currently pursuing Nordic Master's (Norway → Sweden).
+</p>
+<a href="cv.pdf" class="btn">Download CV</a>
+</div>
+
+<img src="profile.jpg" alt="Profile Photo">
+
+<div class="wave"></div>
+</section>
+
+<section id="about" class="fade">
+<h2>About Me</h2>
+<p>
+Naval Architect with industry experience in shipbuilding, structural analysis,
+and classification-level quality control. Passionate about sustainable maritime
+solutions and research-driven engineering.
+</p>
+</section>
+
+<section id="skills" class="fade">
+<h2>Technical Skills</h2>
+
+<div class="skill">ANSYS Workbench
+<div class="bar"><div style="width:90%"></div></div></div>
+
+<div class="skill">CAD (AutoCAD / SolidWorks)
+<div class="bar"><div style="width:85%"></div></div></div>
+
+<div class="skill">MATLAB
+<div class="bar"><div style="width:75%"></div></div></div>
+
+</section>
+
+<section id="research" class="fade">
+<h2>Research & Publications</h2>
+
+<div class="card">
+<h3>The Effect of Length on the Stability of a Ship</h3>
+<p><em>MARTEC 2022 | SSRN</em></p>
+<a href="paper.pdf" class="btn">Download Paper</a>
+</div>
+
+<div class="card">
+<h3>Ongoing Research</h3>
+<p>
+Conveyor belt structural analysis under wind & static loads using ANSYS Workbench.
+</p>
+</div>
+
+</section>
+
+<section id="projects" class="fade">
+<h2>Projects</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Structural Analysis (ANSYS)</h3>
+<p>Stress & deformation analysis under real load conditions.</p>
+</div>
+
+<div class="card">
+<h3>Ship Stability Study</h3>
+<p>Length vs stability analysis research project.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="fade">
+<h2>Contact</h2>
+<p>Email: your.email@example.com</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+© 2026 Nahid Hasan | Maritime Portfolio
+</footer>
+
+<script>
+const faders=document.querySelectorAll('.fade');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+faders.forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
