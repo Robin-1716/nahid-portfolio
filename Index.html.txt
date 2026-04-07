@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nahid Hasan | Maritime Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+section {
+    padding: 80px 12%;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-left: 4px solid #38bdf8;
+    padding-left: 15px;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 20px 12%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
+.btn {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+/* CARDS */
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+/* GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+    color: #94a3b8;
+}
+
+/* ANIMATION */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div><strong>Nahid Hasan</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Naval Architect & Maritime Engineer</h1>
+    <p>
+        Focused on sustainable shipbuilding, structural optimization,
+        and advanced maritime systems. Currently pursuing Nordic Master's in Maritime Engineering.
+    </p>
+    <a href="#" class="btn">Download CV</a>
+</section>
+
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+        I am a maritime engineer with professional experience in ship structure analysis,
+        production drawing verification, and quality control in shipbuilding industries.
+        My research interests include sustainability, structural mechanics, and
+        energy-efficient marine design.
+    </p>
+</section>
+
+<section id="experience" class="fade-in">
+    <h2>Professional Experience</h2>
+
+    <div class="card">
+        <h3>Assistant Engineer (Naval Architect)</h3>
+        <p>Dockyard & Engineering Works Ltd. | 2023 – Present</p>
+        <ul>
+            <li>Ship structure analysis and load calculations</li>
+            <li>Quality control before classification inspections</li>
+            <li>Docking, undocking, launching supervision</li>
+            <li>Technical R&D support</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Assistant Engineer</h3>
+        <p>Decagon Construction & Services Ltd. | 2022 – 2023</p>
+        <ul>
+            <li>Project supervision</li>
+            <li>Technical documentation</li>
+            <li>Structural coordination</li>
+        </ul>
+    </div>
+
+</section>
+
+<section id="research" class="fade-in">
+    <h2>Research & Publications</h2>
+
+    <div class="card">
+        <h3>The Effect of Length on the Stability of a Ship</h3>
+        <p>Published at MARTEC 2022 | Selected for SSRN</p>
+    </div>
+
+    <div class="card">
+        <h3>Ongoing Research</h3>
+        <p>
+            Conveyor belt structure analysis under wind and static loads
+            using ANSYS Workbench.
+        </p>
+    </div>
+</section>
+
+<section id="projects" class="fade-in">
+    <h2>Selected Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Ship Structural Optimization</h3>
+            <p>Finite element analysis for improving hull efficiency.</p>
+        </div>
+
+        <div class="card">
+            <h3>Conveyor Structure Analysis</h3>
+            <p>Wind load & static load structural evaluation.</p>
+        </div>
+
+        <div class="card">
+            <h3>3D Ship Design Competition</h3>
+            <p>International 3rd Place – 120 participants.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p>Email: your.email@example.com</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+    © 2026 Nahid Hasan | Maritime Engineering Portfolio
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.3 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+
+</body>
+</html>
