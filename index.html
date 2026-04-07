@@ -15,6 +15,7 @@ body{
 font-family:'Inter',sans-serif;
 background:#020617;
 color:#e2e8f0;
+overflow-x:hidden;
 }
 
 /* NAV */
@@ -24,8 +25,9 @@ width:100%;
 display:flex;
 justify-content:space-between;
 padding:20px 10%;
-background:rgba(2,6,23,0.9);
+background:rgba(2,6,23,0.85);
 z-index:1000;
+backdrop-filter: blur(10px);
 }
 
 nav a{
@@ -45,12 +47,10 @@ justify-content:space-between;
 padding:0 10%;
 position:relative;
 overflow:hidden;
+z-index:1;
 }
 
-.hero-text{
-max-width:600px;
-z-index:2;
-}
+.hero-text{max-width:600px; z-index:2;}
 
 .hero h1{font-size:48px;}
 .hero p{margin-top:15px;}
@@ -59,21 +59,7 @@ z-index:2;
 width:260px;
 border-radius:50%;
 border:4px solid #38bdf8;
-}
-
-/* WAVE */
-.wave{
-position:absolute;
-bottom:0;
-width:200%;
-height:200px;
-background:rgba(56,189,248,0.1);
-animation:wave 10s linear infinite;
-}
-
-@keyframes wave{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+z-index:2;
 }
 
 /* BUTTON */
@@ -85,9 +71,56 @@ background:#38bdf8;
 color:#020617;
 text-decoration:none;
 border-radius:5px;
+font-weight:600;
 }
 
-/* SECTION */
+/* 🌊 OCEAN WAVES */
+.ocean{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:220px;
+overflow:hidden;
+z-index:0;
+}
+
+.wave{
+position:absolute;
+width:200%;
+height:100%;
+opacity:0.5;
+}
+
+.wave1{
+animation:waveMove1 12s linear infinite;
+z-index:3;
+opacity:0.4;
+}
+
+.wave2{
+animation:waveMove2 18s linear infinite;
+z-index:2;
+opacity:0.3;
+}
+
+.wave3{
+animation:waveMove1 25s linear infinite;
+z-index:1;
+opacity:0.2;
+}
+
+@keyframes waveMove1{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+@keyframes waveMove2{
+0%{transform:translateX(-50%);}
+100%{transform:translateX(0);}
+}
+
+/* SECTIONS */
 section{padding:80px 10%;}
 
 h2{
@@ -107,6 +140,7 @@ transition:0.3s;
 
 .card:hover{
 transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(56,189,248,0.2);
 }
 
 /* GRID */
@@ -117,9 +151,7 @@ gap:20px;
 }
 
 /* SKILLS */
-.skill{
-margin:15px 0;
-}
+.skill{margin:15px 0;}
 
 .bar{
 background:#1e293b;
@@ -158,36 +190,61 @@ background:#020617;
 </nav>
 
 <section class="hero">
+
 <div class="hero-text">
 <h1>Naval Architect & Maritime Engineer</h1>
 <p>
 Focused on Arctic maritime systems, sustainability, and advanced ship design.
-Currently pursuing Nordic Master's (Norway → Sweden).
+Nordic Master's (Norway → Sweden).
 </p>
 <a href="cv.pdf" class="btn">Download CV</a>
 </div>
 
-<img src="profile.jpg" alt="Profile Photo">
+<img src="profile.jpg" alt="Profile">
 
-<div class="wave"></div>
+<!-- 🌊 OCEAN -->
+<div class="ocean">
+
+<div class="wave wave1">
+<svg viewBox="0 0 1440 320">
+<path fill="#38bdf8" fill-opacity="0.4"
+d="M0,192L80,170C160,149,320,107,480,112C640,117,800,171,960,176C1120,181,1280,139,1360,117L1440,96V320H0Z"></path>
+</svg>
+</div>
+
+<div class="wave wave2">
+<svg viewBox="0 0 1440 320">
+<path fill="#38bdf8" fill-opacity="0.3"
+d="M0,224L80,208C160,192,320,160,480,154.7C640,149,800,171,960,186.7C1120,203,1280,213,1360,218.7L1440,224V320H0Z"></path>
+</svg>
+</div>
+
+<div class="wave wave3">
+<svg viewBox="0 0 1440 320">
+<path fill="#38bdf8" fill-opacity="0.2"
+d="M0,256L120,240C240,224,480,192,720,181.3C960,171,1200,181,1320,186.7L1440,192V320H0Z"></path>
+</svg>
+</div>
+
+</div>
+
 </section>
 
 <section id="about" class="fade">
 <h2>About Me</h2>
 <p>
-Naval Architect with industry experience in shipbuilding, structural analysis,
-and classification-level quality control. Passionate about sustainable maritime
-solutions and research-driven engineering.
+Naval Architect with experience in shipbuilding, structural analysis,
+and classification-level quality control. Focused on sustainable maritime engineering.
 </p>
 </section>
 
 <section id="skills" class="fade">
 <h2>Technical Skills</h2>
 
-<div class="skill">ANSYS Workbench
+<div class="skill">ANSYS
 <div class="bar"><div style="width:90%"></div></div></div>
 
-<div class="skill">CAD (AutoCAD / SolidWorks)
+<div class="skill">CAD
 <div class="bar"><div style="width:85%"></div></div></div>
 
 <div class="skill">MATLAB
@@ -196,19 +253,16 @@ solutions and research-driven engineering.
 </section>
 
 <section id="research" class="fade">
-<h2>Research & Publications</h2>
+<h2>Research</h2>
 
 <div class="card">
-<h3>The Effect of Length on the Stability of a Ship</h3>
-<p><em>MARTEC 2022 | SSRN</em></p>
-<a href="paper.pdf" class="btn">Download Paper</a>
+<h3>Ship Stability Study</h3>
+<p>MARTEC 2022 | SSRN</p>
 </div>
 
 <div class="card">
-<h3>Ongoing Research</h3>
-<p>
-Conveyor belt structural analysis under wind & static loads using ANSYS Workbench.
-</p>
+<h3>Conveyor Structural Analysis</h3>
+<p>ANSYS-based wind & static load analysis</p>
 </div>
 
 </section>
@@ -217,17 +271,8 @@ Conveyor belt structural analysis under wind & static loads using ANSYS Workbenc
 <h2>Projects</h2>
 
 <div class="grid">
-
-<div class="card">
-<h3>Structural Analysis (ANSYS)</h3>
-<p>Stress & deformation analysis under real load conditions.</p>
-</div>
-
-<div class="card">
-<h3>Ship Stability Study</h3>
-<p>Length vs stability analysis research project.</p>
-</div>
-
+<div class="card"><h3>Structural FEA</h3></div>
+<div class="card"><h3>Ship Design</h3></div>
 </div>
 
 </section>
@@ -235,11 +280,10 @@ Conveyor belt structural analysis under wind & static loads using ANSYS Workbenc
 <section id="contact" class="fade">
 <h2>Contact</h2>
 <p>Email: your.email@example.com</p>
-<p>LinkedIn: linkedin.com/in/yourprofile</p>
 </section>
 
 <footer>
-© 2026 Nahid Hasan | Maritime Portfolio
+© 2026 Nahid Hasan
 </footer>
 
 <script>
